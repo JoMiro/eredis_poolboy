@@ -1,0 +1,18 @@
+{application, eredis_poolboy,
+ [{description, "Redis + Poolboy"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {mod, { eredis_poolboy_app, []}},
+  {applications,
+   [kernel,
+    stdlib,
+    eredis,
+    poolboy
+   ]},
+  {env,[]},
+  {modules, []},
+
+  {maintainers, []},
+  {licenses, []},
+  {links, []}
+ ]}.
