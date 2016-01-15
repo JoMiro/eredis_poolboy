@@ -1,9 +1,9 @@
 eredis_poolboy
 =====
 
-An OTP application
+An OTP application about eredis + poolboy
 
 Build
 -----
 
-    $ rebar3 compile
+    $ rebar compile
