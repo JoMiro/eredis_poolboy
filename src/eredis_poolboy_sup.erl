@@ -29,10 +29,11 @@ start_link() ->
 %% Child :: {Id,StartFunc,Restart,Shutdown,Type,Modules}
 init([]) ->
     Pools = application:get_all_env(eredis_poolboy),
+    Pools1 = proplists:delete(included_applications, Pools),
     PoolSpec = lists:map(
         fun ({PoolName, {PoolArgs, MysqlArgs}}) ->
             eredis_poolboy:child_spec(PoolName, PoolArgs, MysqlArgs)
-        end, Pools),
+        end, Pools1),
     {ok, { {one_for_one, 10, 10}, PoolSpec} }.
 
 %%====================================================================
